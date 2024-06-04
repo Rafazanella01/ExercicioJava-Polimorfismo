@@ -1,13 +1,14 @@
 package com.mycompany.zoologico;
 import java.util.ArrayList;
+import com.mycompany.zoologico.Animal;
 
 /**
  *
  * @author rafaz
  */
 public class Zoologico {
-    ArrayList jaulas = new ArrayList();
-
+    ArrayList<Animal> jaulas = new ArrayList<>();
+    
     public void colocarNaJaula(Animal animal)
     {
         jaulas.add(animal);
@@ -15,21 +16,14 @@ public class Zoologico {
 
     public void percorrerJaulas()
     {
-        int i;
-
-        for(i = 0; i < jaulas.size(); i++){
-            if(jaulas.get(i) instanceof Cachorro){
-                Cachorro ca = (Cachorro)jaulas.get(i);
-                System.out.println("Jaula aberta!");
-                ca.correr();
-            }
-            else if(jaulas.get(i) instanceof Cavalo){
-                Cavalo cav = (Cavalo)jaulas.get(i);
-                System.out.println("Jaula aberta!");
-                cav.correr();
-            }
-            else{
-                System.out.println("Jaula aberta!");
+        for (Animal animal : jaulas) {
+            System.out.println("Jaula aberta!");
+            if (animal instanceof Cachorro) {
+                ((Cachorro) animal).correr();
+            } else if (animal instanceof Cavalo) {
+                ((Cavalo) animal).correr();
+            } else if (animal instanceof Preguica) {
+                ((Preguica) animal).subirArvore();
             }
         }
     }

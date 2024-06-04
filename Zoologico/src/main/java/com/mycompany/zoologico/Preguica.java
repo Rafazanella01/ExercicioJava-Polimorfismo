@@ -10,9 +10,14 @@ public class Preguica extends Animal{
     {
         super(nome, idade);
     }
+    
+    @Override
+    public void emitirSom() {
+        System.out.println(getNome() + " esta fazendo barulho de preguica!");
+    }
 
     public void subirArvore()
     {
-        System.out.println("Preguiça subindo árvore!");
+        System.out.println("Preguica subindo arvore!");
     }
 }

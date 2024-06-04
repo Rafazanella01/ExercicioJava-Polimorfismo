@@ -1,14 +1,13 @@
 package com.mycompany.zoologico;
-import java.util.Random;
+import java.util.List;
 
 /**
  *
  * @author rafaz
  */
 public class Animais {
-    public static void main(String[] args) throws Exception {
-        
-        Cachorro ca = new Cachorro("Tufão", 12);
+    public static void main(String[] args) {
+        Cachorro ca = new Cachorro("Tufao", 12);
         ca.emitirSom();
 
         Cavalo cav = new Cavalo("Nick", 33);
@@ -24,22 +23,24 @@ public class Animais {
 
         Zoologico zoo = new Zoologico();
 
-        Random gerador = new Random();
+        // Colocando manualmente os animais nas jaulas
+        List<Animal> animais = List.of(
+            new Cachorro("Tufao", 12),
+            new Cachorro("Franco", 8),
+            new Cavalo("Nick", 33),
+            new Cavalo("Paraguaio", 5),
+            new Preguica("Schmidt", 12),
+            new Preguica("Cid", 10),
+            new Cachorro("Einstein", 4),
+            new Cavalo("Pe de pano", 7),
+            new Preguica("dorme", 9),
+            new Cachorro("Caramelo", 6)
+        );
 
-        int i;
-        for(i = 0; i < 10; i++){
-            int numero = gerador.nextInt(3);
-
-            if(numero == 0){
-                zoo.colocarNaJaula(ca);
-            }
-            else if(numero == 1){
-                zoo.colocarNaJaula(cav);
-            }
-            else{
-                zoo.colocarNaJaula(p);
-            }
+        for (Animal animal : animais) {
+            zoo.colocarNaJaula(animal);
         }
+
         zoo.percorrerJaulas();
     }
 }
