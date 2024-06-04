@@ -9,7 +9,6 @@ b) Implemente um programa que crie os 3 tipos de animais definidos no exercício
 invoque o método que emite o som de cada um de forma polimórfica, isto é, independente do
 tipo de animal.
 
-Exercícios
 c) Implemente uma classe Veterinario que contenha um método examinar() cujo
 parâmetro de entrada é um Animal, quando o animal for examinado ele deve emitir
 um som, teste passando os 3 animais com parâmetro
